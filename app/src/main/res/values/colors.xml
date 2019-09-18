@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="Red">@android:color/holo_red_dark</color>
+    <color name="black">#000000</color>
+    <color name="blue">#4F94CD</color>
+    <color name="blue_select">#6CA6CD</color>
+    <color name="percent_20_black">#33000000</color>
+    <color name="theme_black">#222222</color>
+    <color name="theme_black_deep">#333333</color>
+    <color name="theme_black_select">#111111</color>
+    <color name="colorGreen">@android:color/holo_green_dark</color>
+    <color name="colorLightGreen">@android:color/holo_green_light</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_select">#808080</color>
+    <color name="text_gray">#9B9B9B</color>
+    <color name="theme_gold">#D6B781</color>
+    <color name="theme_gold_select">#A48A5E</color>
+    <color name="theme_rec_gold">#DBBA82</color>
+    <color name="transparent">#00000000</color>
+    <color name="room_gold_choose">#a78c60</color>
+    <color name="room_gold_line">#90774C</color>
+    <color name="theme_gold_button">#DBBA82</color>
+    <color name="theme_gold_button_click">#a48a5e</color>
+    <color name="dialog_bg">#4A4A4A</color>
+    <color name="dialog_bg_select">#333333</color>
+    <color name="dialog_line">#666666</color>
+    <color name="refresh_background">#161616</color>
+</resources>
