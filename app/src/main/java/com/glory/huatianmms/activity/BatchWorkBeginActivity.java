@@ -3,7 +3,6 @@ package com.glory.huatianmms.activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,6 +13,7 @@ import com.glory.huatianmms.entity.DataListEntity;
 import com.glory.huatianmms.entity.MaterielEntity;
 import com.glory.huatianmms.entity.response.BaseEntity;
 import com.glory.huatianmms.util.NetUtils;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.lzy.okgo.model.Response;
@@ -22,6 +22,7 @@ import com.pda.platform.ui.ui_pdaplatform.callback.FreeUI_DialogEntityCallBack;
 import com.pda.platform.ui.ui_pdaplatform.callback.FreeUI_EntityCallBack;
 import com.pda.platform.ui.ui_pdaplatform.entity.FreeUI_AddViewEntity;
 import com.pda.platform.ui.ui_pdaplatform.utils_public.FreeApi_StaticMembers;
+import com.pda.platform.ui.ui_pdaplatform.utils_public.FreeApi_StringUtils;
 import com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText;
 
 import java.util.List;
@@ -55,9 +56,19 @@ public class BatchWorkBeginActivity extends FreeUI_BaseActivity {
     TextView supplierTxt;
     @BindView(R.id.validity_Txt)
     TextView validityTxt;
+    @BindView(R.id.shelves_Ext)
+    FreeUI_ClearEditText shelvesExt;
+    @BindView(R.id.storage_Ext)
+    FreeUI_ClearEditText storageExt;
 
     private MaterielEntity entity;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
 
     @Override
     protected int getLayoutResId() {
@@ -79,7 +90,7 @@ public class BatchWorkBeginActivity extends FreeUI_BaseActivity {
                     if (s.length() > 0) {
                         queryData(s.toString());
                     } else {
-                        showToast("输入信息有误",false);
+                        showToast("输入信息有误", false);
                     }
                 }
             }
@@ -90,25 +101,79 @@ public class BatchWorkBeginActivity extends FreeUI_BaseActivity {
             }
         });
 
-        lotEit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    if(lotEit.getText().toString().equals(""))
-                    {
-                        return true;
-                    }
-                    queryData(lotEit.getText().toString());
+        lotEit.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                if (lotEit.getText().toString().equals("")) {
                     return true;
                 }
-                return false;
+                queryData(lotEit.getText().toString());
+                return true;
             }
+            return false;
         });
     }
 
     @Override
     protected void initData() {
 
+    }
+
+    @Override
+    protected FreeUI_AddViewEntity getBaseEntity() {
+        freeUI_titleView.setTitle("物料上架");
+        freeUI_titleView.setRightListener("提交", view -> {
+            String strLot = lotEit.getText().toString().trim();
+            if (FreeApi_StringUtils.isEmpty(strLot)) {
+                showToast("请扫描批次号", false);
+                return;
+            }
+            String strShelves = shelvesExt.getText().toString().trim();
+            if (FreeApi_StringUtils.isEmpty(strShelves)) {
+                showToast("请扫描货架号", false);
+                return;
+            }
+            String strStorage = storageExt.getText().toString().trim();
+            if (FreeApi_StringUtils.isEmpty(strStorage)) {
+                showToast("请扫描储位号", false);
+                return;
+            }
+            FreeUI_EntityCallBack<BaseEntity<?>> callBack = new FreeUI_DialogEntityCallBack<BaseEntity<?>>
+                    (new TypeToken<BaseEntity<?>>() {
+                    }.getType(), getSupportFragmentManager(), this) {
+
+                @Override
+                public void onSuccess
+                        (final Response<BaseEntity<?>> response) {
+                    if (response.body().isSuccess(getApplicationContext())) {
+                        showToast("上架成功", true);
+                    } else {
+                        showToast(response.body().getResponse().getHeader().getRESULTMESSAGE(), true);
+                    }
+                }
+
+                @Override
+                public void onError
+                        (Response<BaseEntity<?>> response) {
+                    super.onError(response);
+                    loadError(response.getException(), "HT.ONSHELF");
+                }
+            };
+
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.addProperty("OBJECTTYPE", "MLOT");
+            jsonObject.addProperty("WAREHOUSEID", "");
+            jsonObject.addProperty("SHELFID",strShelves);
+            jsonObject.addProperty("SHELFPOSITIONID", strStorage);
+            JsonObject lotJsonObject =new JsonObject();
+            lotJsonObject.addProperty("MLOTID",strLot);
+            JsonArray jsonArray = new JsonArray();
+            jsonArray.add(lotJsonObject);
+            jsonObject.addProperty("MLOTLIST", jsonArray.toString());
+
+            NetUtils.requestGetNet(App.WEB_URL, this, callBack, "HT.ONSHELF", jsonObject);
+
+        });
+        return new FreeUI_AddViewEntity(getIntent().getStringExtra(FreeApi_StaticMembers.SHOW_PLUGIN_KEY), llMain);
     }
 
     private void queryData(String lotID) {
@@ -124,6 +189,7 @@ public class BatchWorkBeginActivity extends FreeUI_BaseActivity {
                     if (list.size() == 0)
                         return;
                     entity = list.get(0);
+                    fillData();
                 }
             }
 
@@ -142,28 +208,14 @@ public class BatchWorkBeginActivity extends FreeUI_BaseActivity {
         NetUtils.requestGetNet(App.WEB_URL, this, callBack, "GETENTITYLIST", jsonObject);
     }
 
-    private void fillData()
-    {
-        lotNumberTxt.setText("");
-        lotStateTxt.setText("");
-        materielNameTxt.setText("");
-        materielNumberTxt.setText("");
-        pecificationsTxt.setText("");
-        modelTxt.setText("");
-        supplierTxt.setText("");
-        validityTxt.setText("");
-    }
-
-    @Override
-    protected FreeUI_AddViewEntity getBaseEntity() {
-        freeUI_titleView.setTitle("物料上架");
-        return new FreeUI_AddViewEntity(getIntent().getStringExtra(FreeApi_StaticMembers.SHOW_PLUGIN_KEY), llMain);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+    private void fillData() {
+        lotNumberTxt.setText(entity.getMAINQTY());
+        lotStateTxt.setText(entity.getSTATE());
+        materielNameTxt.setText(entity.getMATERIALDESC());
+        materielNumberTxt.setText(entity.getMATERIALNAME());
+        pecificationsTxt.setText(entity.getGRADE1());
+        modelTxt.setText(entity.getGRADE2());
+        supplierTxt.setText(entity.getPARTNERCODE());
+        validityTxt.setText(entity.getFLOORLIFEEXPIRE());
     }
 }

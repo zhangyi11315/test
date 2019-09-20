@@ -1,58 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
     android:id="@+id/llMain"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/free_ui_glory_bg"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:background="@color/free_ui_glory_bg">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_1"
-        android:orientation="horizontal"
-        android:background="@color/free_ui_white">
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="输入批号"
             android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_blue_sky_theme_color"/>
+            android:text="输入批号"
+            android:textColor="@color/free_ui_blue_sky_theme_color" />
 
         <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
             android:id="@+id/lot_Eit"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_40"
-            android:paddingLeft="@dimen/dp_8"
-            android:paddingRight="@dimen/dp_8"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/free_ui_blue_sky_selector_edittext"
+            android:hint="请输入批号"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
             android:singleLine="true"
             android:textColor="@color/free_ui_dark_gold_text_black"
             android:textColorHint="@color/free_ui_blue_sky_text_gray"
-            android:background="@drawable/free_ui_blue_sky_selector_edittext"
-            android:hint="请输入批号"
-            android:textSize="@dimen/sp_14"/>
+            android:textSize="@dimen/sp_14" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_1"
-        android:orientation="horizontal"
-        android:background="@color/free_ui_white">
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="批号数量"
             android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_blue_sky_theme_color"/>
+            android:text="货架号"
+            android:textColor="@color/free_ui_blue_sky_theme_color" />
+
+        <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
+            android:id="@+id/shelves_Ext"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/free_ui_blue_sky_selector_edittext"
+            android:hint="请输入货架号"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:singleLine="true"
+            android:textColor="@color/free_ui_dark_gold_text_black"
+            android:textColorHint="@color/free_ui_blue_sky_text_gray"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/free_ui_dp_12"
+            android:text="储位号"
+            android:textColor="@color/free_ui_blue_sky_theme_color" />
+
+        <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
+            android:id="@+id/storage_Ext"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/free_ui_blue_sky_selector_edittext"
+            android:hint="请输入储位号"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:singleLine="true"
+            android:textColor="@color/free_ui_dark_gold_text_black"
+            android:textColorHint="@color/free_ui_blue_sky_text_gray"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/free_ui_dp_12"
+            android:text="批号数量"
+            android:textColor="@color/free_ui_blue_sky_theme_color" />
 
         <TextView
             android:id="@+id/lotNumber_Txt"
@@ -68,16 +131,16 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_1"
-        android:orientation="horizontal"
-        android:background="@color/free_ui_white">
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="批号状态"
             android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_blue_sky_theme_color"/>
+            android:text="批号状态"
+            android:textColor="@color/free_ui_blue_sky_theme_color" />
 
         <TextView
             android:id="@+id/lotState_Txt"
@@ -93,16 +156,16 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_1"
-        android:orientation="horizontal"
-        android:background="@color/free_ui_white">
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="物料名称"
             android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_blue_sky_theme_color"/>
+            android:text="物料名称"
+            android:textColor="@color/free_ui_blue_sky_theme_color" />
 
         <TextView
             android:id="@+id/materielName_Txt"
@@ -118,16 +181,16 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_1"
-        android:orientation="horizontal"
-        android:background="@color/free_ui_white">
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="物料料号"
             android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_blue_sky_theme_color"/>
+            android:text="物料料号"
+            android:textColor="@color/free_ui_blue_sky_theme_color" />
 
         <TextView
             android:id="@+id/materielNumber_Txt"
@@ -143,15 +206,15 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_1"
-        android:orientation="horizontal"
-        android:background="@color/free_ui_white">
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="规格"
             android:layout_marginLeft="@dimen/free_ui_dp_12"
+            android:text="规格"
             android:textColor="@color/free_ui_blue_sky_theme_color"
             tools:ignore="HardcodedText" />
 
@@ -169,16 +232,16 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_1"
-        android:orientation="horizontal"
-        android:background="@color/free_ui_white">
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="型号"
             android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_blue_sky_theme_color"/>
+            android:text="型号"
+            android:textColor="@color/free_ui_blue_sky_theme_color" />
 
         <TextView
             android:id="@+id/model_Txt"
@@ -194,16 +257,16 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_1"
-        android:orientation="horizontal"
-        android:background="@color/free_ui_white">
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="供应商"
             android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_blue_sky_theme_color"/>
+            android:text="供应商"
+            android:textColor="@color/free_ui_blue_sky_theme_color" />
 
         <TextView
             android:id="@+id/supplier_Txt"
@@ -219,19 +282,19 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_1"
-        android:orientation="horizontal"
-        android:background="@color/free_ui_white">
+        android:background="@color/free_ui_white"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="有效期"
             android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_blue_sky_theme_color"/>
+            android:text="有效期"
+            android:textColor="@color/free_ui_blue_sky_theme_color" />
 
         <TextView
-            android:id ="@+id/validity_Txt"
+            android:id="@+id/validity_Txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
