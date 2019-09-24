@@ -1,6 +1,5 @@
 package com.glory.huatianmms.activity;
 
-import com.glory.huatianmms.application.App;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.pda.platform.ui.ui_pdaplatform.base.FreeUI_BaseActivity;
@@ -56,10 +55,15 @@ public class MainActivity  extends FreeUI_BaseActivity {
                 "\t\t\t\"text\": \"治具下架\",\n" +
                 "\t\t\t\"skipClass\": \"com.glory.huatianmms.activity.DialogActivity\"\n" +
                 "\t\t}, {\n" +
-                "\t\t\t\"picName\": \"check\",\n" +
-                "\t\t\t\"showPlugin\": \"DailyInspectionActivity\",\n" +
+                "\t\t\t\"picName\": \"batch_check\",\n" +
+                "\t\t\t\"showPlugin\": \"BatchWorkCheckActivity\",\n" +
                 "\t\t\t\"text\": \"物料盘点\",\n" +
-                "\t\t\t\"skipClass\": \"com.glory.huatianmms.activity.DialogActivity\"\n" +
+                "\t\t\t\"skipClass\": \"com.glory.huatianmms.activity.BatchWorkCheckActivity\"\n" +
+                "\t\t},{\n" +
+                "\t\t\t\"picName\": \"shelf_check\",\n" +
+                "\t\t\t\"showPlugin\": \"ShelfCheckActivity\",\n" +
+                "\t\t\t\"text\": \"治具盘点\",\n" +
+                "\t\t\t\"skipClass\": \"com.glory.huatianmms.activity.ShelfCheckActivity\"\n" +
                 "\t\t}]\n" +
                 "\t}, {\n" +
                 "\t\t\"title\": \"我的信息\",\n" +
@@ -70,13 +74,13 @@ public class MainActivity  extends FreeUI_BaseActivity {
                 "\t\t\t\"picName\": \"\",\n" +
                 "\t\t\t\"showPlugin\": \"用户名\",\n" +
                 "\t\t\t\"text\": \"用户名\",\n" +
-                "\t\t\t\"content\": \""+ App.userEntity.getUSERNAME()+"\",\n" +
+                "\t\t\t\"content\": \"\",\n" +
                 "\t\t\t\"skipClass\": \"\"\n" +
                 "\t\t}, {\n" +
                 "\t\t\t\"picName\": \"\",\n" +
                 "\t\t\t\"showPlugin\": \"中文名\",\n" +
                 "\t\t\t\"text\": \"中文名\",\n" +
-                "\t\t\t\"content\": \""+ App.userEntity.getDESCRIPTION()+"\",\n" +
+                "\t\t\t\"content\": \"\",\n" +
                 "\t\t\t\"skipClass\": \"\"\n" +
                 "\t\t}]\n" +
                 "\t}\n" +
