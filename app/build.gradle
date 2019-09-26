@@ -47,6 +47,7 @@ dependencies {
     implementation 'com.mylhyl:acp:1.1.7'
     implementation 'cjt.library.wheel:camera:0.1.9'
     implementation(name: 'app-debug', ext: 'aar')
+
     implementation 'pub.devrel:easypermissions:1.0.1'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.3.2'
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.58'

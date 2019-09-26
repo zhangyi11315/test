@@ -7,6 +7,12 @@ package com.glory.huatianmms.entity.request;
  */
 public class MessageHeader {
 
+    private String MESSAGENAME;
+    private String TRANSACTIONID;
+    private String ORGRRN;
+    private String USERNAME;
+    private String ORGNAME;
+
     public String getMESSAGENAME() {
         return MESSAGENAME == null ? "" : String.valueOf(MESSAGENAME);
     }
@@ -39,13 +45,11 @@ public class MessageHeader {
         this.USERNAME = USERNAME;
     }
 
-    private String MESSAGENAME;
+    public String getORGNAME() {
+        return ORGNAME == null ? "" : ORGNAME;
+    }
 
-    private String TRANSACTIONID;
-
-    private String ORGRRN;
-
-    private String USERNAME;
-
-
+    public void setORGNAME(String ORGNAME) {
+        this.ORGNAME = ORGNAME;
+    }
 }

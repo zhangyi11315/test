@@ -28,6 +28,7 @@ public class NetUtils {
         header.setMESSAGENAME(method);
         header.setTRANSACTIONID(uuID);
         header.setORGRRN(App.userEntity.getDEFAULTORGRRN());
+        header.setORGNAME("FAB1");
         header.setUSERNAME(App.userEntity.getUSERNAME());
         MessageFormat format = new MessageFormat();
         format.setBody(jsonString);
@@ -35,9 +36,29 @@ public class NetUtils {
         RequestMessage message = new RequestMessage();
         message.setRequest(format);
         Map<String, String> map = new HashMap<>();
-        map.put("senderId",uuID);
+        map.put("senderId", "HuaTianDirectSender");
         map.put("requestMessage",StringEscapeUtils.unescapeJson(new Gson().toJson(message)));
-        map.put("timeOut","15000");map.put("Request",StringEscapeUtils.unescapeJson(new Gson().toJson(message)));
-        FreeApi_NetUtils.requestPostNet( url, tag, map, callBack);
+        map.put("timeOut", "15000");
+        FreeApi_NetUtils.requestGetNet(url, tag, map, callBack);
+    }
+
+    public static <T> void requestGetNet(String url, String senderId,Object tag, FreeUI_EntityCallBack<T> callBack, String method, JsonObject jsonString) {
+        String uuID = UUID.randomUUID().toString();
+        MessageHeader header = new MessageHeader();
+        header.setMESSAGENAME(method);
+        header.setTRANSACTIONID(uuID);
+        header.setORGRRN(App.userEntity.getDEFAULTORGRRN());
+        header.setORGNAME("FAB1");
+        header.setUSERNAME(App.userEntity.getUSERNAME());
+        MessageFormat format = new MessageFormat();
+        format.setBody(jsonString);
+        format.setHeader(header);
+        RequestMessage message = new RequestMessage();
+        message.setRequest(format);
+        Map<String, String> map = new HashMap<>();
+        map.put("senderId", senderId);
+        map.put("requestMessage",StringEscapeUtils.unescapeJson(new Gson().toJson(message)));
+        map.put("timeOut", "15000");
+        FreeApi_NetUtils.requestGetNet(url, tag, map, callBack);
     }
 }

@@ -1,7 +1,6 @@
 package com.glory.huatianmms.activity;
 
 import android.Manifest;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
 
@@ -26,7 +25,6 @@ import com.pda.platform.ui.ui_pdaplatform.view.FreeUI_PasswordEditText;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.AppSettingsDialog;
@@ -93,38 +91,39 @@ public class LoginActivity extends FreeUI_BaseActivity implements EasyPermission
 
     private void Login()
     {
-//        FreeUI_EntityCallBack<BaseEntity<LoginEntity>> callBack = new FreeUI_DialogEntityCallBack<BaseEntity<LoginEntity>>
-//                (new TypeToken<BaseEntity<LoginEntity>>() {
-//                }.getType(), getSupportFragmentManager(), this) {
-//
-//            @Override
-//            public void onSuccess
-//                    (final Response<BaseEntity<LoginEntity>> response) {
-//                if (response.body().isSuccess(getApplicationContext())) {
-//                    LoginEntity loginEntity = response.body().getResponse().getBody();
-//                    App.userEntity = loginEntity.getUSER();
-//                    FreeApi_ActivityManager.getActivityManager().finishAllActivity();
-//                    FreeApi_Utils.skipWithExtraIntent("", LoginActivity.this, MainActivity.class);
-//                    FreeApi_SharePreferencesUtils.setSharePre("HTMMS_FILE", "USERNAME", etMobile.getText().toString().trim(), App.app);
-//                    FreeApi_SharePreferencesUtils.setSharePre("HTMMS_FILE", "PASSWORD", etPassword.getText().toString().trim(), App.app);
-//                }
-//            }
-//
-//            @Override
-//            public void onError
-//                    (Response<BaseEntity<LoginEntity>> response) {
-//                super.onError(response);
-//                loadError(response.getException(), "PDALoginRequest");
-//            }
-//        };
-//
-//        JsonObject jsonObject = new JsonObject();
-//        jsonObject.addProperty("USERNAME", etMobile.getText().toString().trim());
-//        jsonObject.addProperty("PASSWORD", etPassword.getText().toString().trim());
-//        NetUtils.requestGetNet(App.WEB_URL , this, callBack,"PDALogIn",jsonObject);
+        FreeUI_EntityCallBack<BaseEntity<LoginEntity>> callBack = new FreeUI_DialogEntityCallBack<BaseEntity<LoginEntity>>
+                (new TypeToken<BaseEntity<LoginEntity>>() {
+                }.getType(), getSupportFragmentManager(), this) {
 
-        FreeApi_ActivityManager.getActivityManager().finishAllActivity();
-        FreeApi_Utils.skipWithExtraIntent("", LoginActivity.this, MainActivity.class);
+            @Override
+            public void onSuccess
+                    (final Response<BaseEntity<LoginEntity>> response) {
+                if (response.body().isSuccess(getApplicationContext())) {
+                    LoginEntity loginEntity = response.body().getResponse().getBody();
+                    App.userEntity = loginEntity.getUSER();
+                    FreeApi_ActivityManager.getActivityManager().finishAllActivity();
+                    FreeApi_Utils.skipWithExtraIntent("", LoginActivity.this, MainActivity.class);
+                    FreeApi_SharePreferencesUtils.setSharePre("HTMMS_FILE", "USERNAME", etMobile.getText().toString().trim(), App.app);
+                    FreeApi_SharePreferencesUtils.setSharePre("HTMMS_FILE", "PASSWORD", etPassword.getText().toString().trim(), App.app);
+                }else {
+                    showToast(response.body().getResponse().getHeader().getRESULTMESSAGE(), false);
+                }
+            }
+
+            @Override
+            public void onError
+                    (Response<BaseEntity<LoginEntity>> response) {
+                super.onError(response);
+                loadError(response.getException(), "PDALoginRequest");
+            }
+        };
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("USERNAME", etMobile.getText().toString().trim());
+        jsonObject.addProperty("PASSWORD", etPassword.getText().toString().trim());
+        NetUtils.requestGetNet(App.WEB_URL , this, callBack,"USER_LOGIN",jsonObject);
+//        FreeApi_ActivityManager.getActivityManager().finishAllActivity();
+//        FreeApi_Utils.skipWithExtraIntent("", LoginActivity.this, MainActivity.class);
     }
 
     @AfterPermissionGranted(PERMISSIONS_REQUEST_CODE)

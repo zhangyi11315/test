@@ -116,6 +116,8 @@ public class BatchWorkEndActivity extends FreeUI_BaseActivity {
                         return;
                     entity = list.get(0);
                     fillData();
+                }else {
+                    showToast(response.body().getResponse().getHeader().getRESULTMESSAGE(), false);
                 }
             }
 
@@ -170,7 +172,7 @@ public class BatchWorkEndActivity extends FreeUI_BaseActivity {
                     if (response.body().isSuccess(getApplicationContext())) {
                         showToast("下架成功", true);
                     } else {
-                        showToast(response.body().getResponse().getHeader().getRESULTMESSAGE(), true);
+                        showToast(response.body().getResponse().getHeader().getRESULTMESSAGE(), false);
                     }
                 }
 
@@ -188,7 +190,7 @@ public class BatchWorkEndActivity extends FreeUI_BaseActivity {
             lotJsonObject.addProperty("MLOTID",strLot);
             JsonArray jsonArray = new JsonArray();
             jsonArray.add(lotJsonObject);
-            jsonObject.addProperty("MLOTLIST", jsonArray.toString());
+            jsonObject.add("MLOTLIST", jsonArray);
             NetUtils.requestGetNet(App.WEB_URL, this, callBack, "HT.OFFSHELF", jsonObject);
         });
         return new FreeUI_AddViewEntity(getIntent().getStringExtra(FreeApi_StaticMembers.SHOW_PLUGIN_KEY), llMain);

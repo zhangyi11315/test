@@ -9,299 +9,310 @@
     android:focusableInTouchMode="true"
     android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="输入批号"
-            android:textColor="@color/free_ui_blue_sky_theme_color" />
-
-        <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
-            android:id="@+id/lot_Eit"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_40"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:background="@drawable/free_ui_blue_sky_selector_edittext"
-            android:hint="请输入批号"
-            android:paddingLeft="@dimen/dp_8"
-            android:paddingRight="@dimen/dp_8"
-            android:singleLine="true"
-            android:textColor="@color/free_ui_dark_gold_text_black"
-            android:textColorHint="@color/free_ui_blue_sky_text_gray"
-            android:textSize="@dimen/sp_14" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="货架号"
-            android:textColor="@color/free_ui_blue_sky_theme_color" />
+            android:orientation="vertical">
 
-        <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
-            android:id="@+id/shelves_Ext"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_40"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:background="@drawable/free_ui_blue_sky_selector_edittext"
-            android:hint="请输入货架号"
-            android:paddingLeft="@dimen/dp_8"
-            android:paddingRight="@dimen/dp_8"
-            android:singleLine="true"
-            android:textColor="@color/free_ui_dark_gold_text_black"
-            android:textColorHint="@color/free_ui_blue_sky_text_gray"
-            android:textSize="@dimen/sp_14" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="输入批号"
+                    android:textColor="@color/free_ui_blue_sky_theme_color" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="储位号"
-            android:textColor="@color/free_ui_blue_sky_theme_color" />
+                <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
+                    android:id="@+id/lot_Eit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/free_ui_blue_sky_selector_edittext"
+                    android:hint="请输入批号"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:singleLine="true"
+                    android:textColor="@color/free_ui_dark_gold_text_black"
+                    android:textColorHint="@color/free_ui_blue_sky_text_gray"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
 
-        <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
-            android:id="@+id/storage_Ext"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_40"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:background="@drawable/free_ui_blue_sky_selector_edittext"
-            android:hint="请输入储位号"
-            android:paddingLeft="@dimen/dp_8"
-            android:paddingRight="@dimen/dp_8"
-            android:singleLine="true"
-            android:textColor="@color/free_ui_dark_gold_text_black"
-            android:textColorHint="@color/free_ui_blue_sky_text_gray"
-            android:textSize="@dimen/sp_14" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="货架号"
+                    android:textColor="@color/free_ui_blue_sky_theme_color" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="批号数量"
-            android:textColor="@color/free_ui_blue_sky_theme_color" />
+                <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
+                    android:id="@+id/shelves_Ext"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/free_ui_blue_sky_selector_edittext"
+                    android:hint="请输入货架号"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:singleLine="true"
+                    android:textColor="@color/free_ui_dark_gold_text_black"
+                    android:textColorHint="@color/free_ui_blue_sky_text_gray"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/lotNumber_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_dark_gold_text_black" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="储位号"
+                    android:textColor="@color/free_ui_blue_sky_theme_color" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
+                <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
+                    android:id="@+id/storage_Ext"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/free_ui_blue_sky_selector_edittext"
+                    android:hint="请输入储位号"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:singleLine="true"
+                    android:textColor="@color/free_ui_dark_gold_text_black"
+                    android:textColorHint="@color/free_ui_blue_sky_text_gray"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="批号状态"
-            android:textColor="@color/free_ui_blue_sky_theme_color" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/lotState_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_dark_gold_text_black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="批号数量"
+                    android:textColor="@color/free_ui_blue_sky_theme_color" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/lotNumber_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:textColor="@color/free_ui_dark_gold_text_black" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="物料名称"
-            android:textColor="@color/free_ui_blue_sky_theme_color" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/materielName_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_dark_gold_text_black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="批号状态"
+                    android:textColor="@color/free_ui_blue_sky_theme_color" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/lotState_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:textColor="@color/free_ui_dark_gold_text_black" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="物料料号"
-            android:textColor="@color/free_ui_blue_sky_theme_color" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/materielNumber_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_dark_gold_text_black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="物料名称"
+                    android:textColor="@color/free_ui_blue_sky_theme_color" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/materielName_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:textColor="@color/free_ui_dark_gold_text_black" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="规格"
-            android:textColor="@color/free_ui_blue_sky_theme_color"
-            tools:ignore="HardcodedText" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/pecifications_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_dark_gold_text_black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="物料料号"
+                    android:textColor="@color/free_ui_blue_sky_theme_color" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/materielNumber_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:textColor="@color/free_ui_dark_gold_text_black" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="型号"
-            android:textColor="@color/free_ui_blue_sky_theme_color" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/model_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_dark_gold_text_black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="规格"
+                    android:textColor="@color/free_ui_blue_sky_theme_color"
+                    tools:ignore="HardcodedText" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/pecifications_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:textColor="@color/free_ui_dark_gold_text_black" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="供应商"
-            android:textColor="@color/free_ui_blue_sky_theme_color" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/supplier_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_dark_gold_text_black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="型号"
+                    android:textColor="@color/free_ui_blue_sky_theme_color" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/model_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:textColor="@color/free_ui_dark_gold_text_black" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_1"
-        android:background="@color/free_ui_white"
-        android:orientation="horizontal">
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:text="有效期"
-            android:textColor="@color/free_ui_blue_sky_theme_color" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/validity_Txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/free_ui_dp_12"
-            android:textColor="@color/free_ui_dark_gold_text_black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="供应商"
+                    android:textColor="@color/free_ui_blue_sky_theme_color" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/supplier_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:textColor="@color/free_ui_dark_gold_text_black" />
 
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/free_ui_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:text="有效期"
+                    android:textColor="@color/free_ui_blue_sky_theme_color" />
+
+                <TextView
+                    android:id="@+id/validity_Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/free_ui_dp_12"
+                    android:textColor="@color/free_ui_dark_gold_text_black" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

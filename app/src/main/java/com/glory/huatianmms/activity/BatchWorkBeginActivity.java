@@ -168,7 +168,7 @@ public class BatchWorkBeginActivity extends FreeUI_BaseActivity {
             lotJsonObject.addProperty("MLOTID",strLot);
             JsonArray jsonArray = new JsonArray();
             jsonArray.add(lotJsonObject);
-            jsonObject.addProperty("MLOTLIST", jsonArray.toString());
+            jsonObject.add("MLOTLIST", jsonArray);
 
             NetUtils.requestGetNet(App.WEB_URL, this, callBack, "HT.ONSHELF", jsonObject);
 
@@ -190,6 +190,8 @@ public class BatchWorkBeginActivity extends FreeUI_BaseActivity {
                         return;
                     entity = list.get(0);
                     fillData();
+                }else {
+                    showToast(response.body().getResponse().getHeader().getRESULTMESSAGE(), false);
                 }
             }
 
