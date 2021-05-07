@@ -20,6 +20,8 @@ public class App extends Application {
     public static String WEB_URL = "http://172.24.197.84:8080/esbrest/RestService/sendrequest";
     public static String EQPID = "";
     public static UserEntity userEntity;
+    public static String RegionName = "";
+    public static String RegionValue = "";
 
     @Override
     public void onCreate() {
@@ -27,7 +29,7 @@ public class App extends Application {
         instance = this;
         app = getApplicationContext();
         userEntity = new UserEntity();
-        FreeUI_InitUtils.init(getApplicationContext(), this, false);
+        FreeUI_InitUtils.init(getApplicationContext(), this, true);
         FreeUI_InitUtils.setTheme(FreeApi_StaticMembers.THEME_SKY_BLUE);
         //Toast显示时长
         FreeApi_StaticMembers.TOASTSHOWTIME = Toast.LENGTH_LONG;

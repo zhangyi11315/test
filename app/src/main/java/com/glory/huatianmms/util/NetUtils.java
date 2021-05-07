@@ -27,8 +27,8 @@ public class NetUtils {
         MessageHeader header = new MessageHeader();
         header.setMESSAGENAME(method);
         header.setTRANSACTIONID(uuID);
-        header.setORGRRN(App.userEntity.getDEFAULTORGRRN());
-        header.setORGNAME("FAB1");
+        header.setORGRRN(App.RegionValue);
+        header.setORGNAME(App.RegionName);
         header.setUSERNAME(App.userEntity.getUSERNAME());
         MessageFormat format = new MessageFormat();
         format.setBody(jsonString);

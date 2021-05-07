@@ -147,7 +147,7 @@ public class BatchWorkBeginActivity extends FreeUI_BaseActivity {
                     if (response.body().isSuccess(getApplicationContext())) {
                         showToast("上架成功", true);
                     } else {
-                        showToast(response.body().getResponse().getHeader().getRESULTMESSAGE(), true);
+                        showToast(response.body().getResponse().getHeader().getRESULTMESSAGE(), false);
                     }
                 }
 
@@ -177,6 +177,7 @@ public class BatchWorkBeginActivity extends FreeUI_BaseActivity {
     }
 
     private void queryData(String lotID) {
+        loadError(new Exception(), "查询lot"+lotID);
         FreeUI_EntityCallBack<BaseEntity<DataListEntity<MaterielEntity>>> callBack = new FreeUI_DialogEntityCallBack<BaseEntity<DataListEntity<MaterielEntity>>>
                 (new TypeToken<BaseEntity<DataListEntity<MaterielEntity>>>() {
                 }.getType(), getSupportFragmentManager(), this) {

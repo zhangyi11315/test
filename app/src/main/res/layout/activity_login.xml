@@ -5,73 +5,100 @@
     android:background="@color/free_ui_glory_bg"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/ivSetting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:padding="@dimen/dp_8"
-        android:src="@drawable/setup"/>
-
-
-    <ImageView
-        android:id="@+id/logoIcon"
-        android:layout_width="152dp"
-        android:layout_height="152dp"
-        android:src="@drawable/logo"
-        android:layout_marginTop="@dimen/dp_30"
-        android:layout_gravity="center_horizontal"/>
-
-    <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
-        android:id="@+id/etMobile"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_44"
-        android:layout_marginLeft="@dimen/dp_60"
-        android:layout_marginRight="@dimen/dp_60"
-        android:layout_marginTop="@dimen/dp_80"
-        android:paddingLeft="@dimen/dp_8"
-        android:paddingRight="@dimen/dp_8"
-        android:singleLine="true"
-        android:inputType="textMultiLine"
-        android:textColor="@color/free_ui_dark_gold_text_black"
-        android:textColorHint="@color/free_ui_blue_sky_text_gray"
-        android:background="@drawable/free_ui_blue_sky_selector_edittext"
-        android:hint="请输入工号"
-        android:textSize="@dimen/sp_14"/>
+        android:layout_height="0dp"
+        android:layout_weight="0.4">
 
-    <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_PasswordEditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_44"
-        android:layout_marginLeft="@dimen/dp_60"
-        android:layout_marginRight="@dimen/dp_60"
-        android:layout_marginTop="@dimen/dp_20"
-        android:inputType="textPassword"
-        android:paddingLeft="@dimen/dp_8"
-        android:paddingRight="@dimen/dp_8"
-        android:singleLine="true"
-        android:background="@drawable/free_ui_blue_sky_selector_edittext"
-        android:textColor="@color/free_ui_dark_gold_text_black"
-        android:textColorHint="@color/free_ui_blue_sky_text_gray"
-        android:hint="请输入密码"
-        android:textSize="@dimen/sp_14"/>
+        <ImageView
+            android:id="@+id/ivSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dp_8"
+            android:src="@drawable/setup"/>
 
-    <Button
-        android:id="@+id/btnLogin"
+
+        <ImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="152dp"
+            android:layout_height="152dp"
+            android:src="@drawable/logo"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_gravity="center_horizontal"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dp_60"
-        android:layout_marginRight="@dimen/dp_60"
-        android:layout_marginTop="@dimen/dp_20"
-        android:text="登录"
-        android:textColor="@color/white"
-        android:background="@drawable/free_ui_blue_sky_selector_blue_button_click_background"/>
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="0.6">
+
+        <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_ClearEditText
+            android:id="@+id/etMobile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:layout_marginRight="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_12"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:singleLine="true"
+            android:inputType="textMultiLine"
+            android:textColor="@color/free_ui_dark_gold_text_black"
+            android:textColorHint="@color/free_ui_blue_sky_text_gray"
+            android:background="@drawable/free_ui_blue_sky_selector_edittext"
+            android:hint="请输入工号"
+            android:textSize="@dimen/sp_14"/>
+
+        <com.pda.platform.ui.ui_pdaplatform.view.FreeUI_PasswordEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:layout_marginRight="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_12"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:singleLine="true"
+            android:background="@drawable/free_ui_blue_sky_selector_edittext"
+            android:textColor="@color/free_ui_dark_gold_text_black"
+            android:textColorHint="@color/free_ui_blue_sky_text_gray"
+            android:hint="请输入密码"
+            android:textSize="@dimen/sp_14"/>
+
+        <Spinner
+            android:id="@+id/region_Spn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:layout_marginRight="@dimen/dp_60">
+
+        </Spinner>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:layout_marginRight="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:background="@drawable/free_ui_blue_sky_selector_blue_button_click_background"/>
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:layout_marginTop="@dimen/free_ui_dp_60"
+        android:layout_marginTop="24dp"
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"
         android:textSize="@dimen/free_ui_dp_20"
